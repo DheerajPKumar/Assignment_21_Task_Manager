@@ -3,8 +3,64 @@
 .container{
 
     &__right{
-        width: 65%;
+        width: 70%;
         height: 100vh;
         background-color:brown;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &-upper{
+            width: 90%;
+            height: 40vh;
+            background-color: yellow;
+        }
+
+        &-lower{
+            overflow-y: scroll;
+            width: 85%;
+            background-color: blue;
+            height: 60vh;
+        }
+
+        &-taskscontainer{
+            display: flex;
+            justify-content: space-between;
+            padding: px(10px);
+            margin: px(20px) auto;
+            border: px(1px) dashed yellow;
+        }
+
+        &-checkboxDiv{
+            width: 5%;
+            text-align: center;
+        }
+
+        &-descriptionDiv{
+            width: 90%;
+            margin-left: px(20px);
+        }
+
+        &-deleteDiv{
+            text-align: center;
+            width: 5%;
+        }
+
+        &-checkboxEl{
+            width: 20px;
+            height: 20px;
+            border: 1px;
+            border-radius: 100px;
+            cursor: pointer;
+        }
+
+        // &-deleteDiv i{
+        //     width: 20px;
+        //     height: 20px;
+        //     border: 1px;
+        //     border-radius: 100px;
+        //     cursor: pointer;
+        // }
     }
 }

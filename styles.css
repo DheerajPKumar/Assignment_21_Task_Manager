@@ -1,5 +1,5 @@
 .container__left {
-  width: 35%;
+  width: 30%;
   height: 100vh;
   background-color: rgb(166, 243, 250);
   position: relative;
@@ -9,7 +9,7 @@
   width: 90%;
   height: -moz-fit-content;
   height: fit-content;
-  top: 10%;
+  top: 15%;
   left: 5%;
 }
 .container__left-form {
@@ -20,6 +20,12 @@
 .container__left-title {
   display: flex;
   flex-direction: column;
+}
+.container__left-titleinput {
+  border-radius: 0.1875rem;
+  padding: 0.3125rem 0.625rem;
+  border: none;
+  outline: none;
 }
 .container__left-input {
   border-radius: 0.1875rem;
@@ -47,12 +53,18 @@
   flex-direction: column;
   width: 48%;
 }
+.container__left-duedateinput {
+  border-radius: 0.1875rem;
+  padding: 0.3125rem 0.625rem;
+  border: none;
+  outline: none;
+}
 .container__left-priority {
   display: flex;
   flex-direction: column;
   width: 48%;
 }
-.container__left-select {
+.container__left-priorityselect {
   border-radius: 0.1875rem;
   padding: 0.3125rem 0.625rem;
   border: none;
@@ -62,17 +74,25 @@
   display: flex;
   flex-direction: column;
 }
+.container__left-categoryselect {
+  border-top-right-radius: 0.1875rem;
+  border-bottom-right-radius: 0.1875rem;
+  padding: 0.3125rem 0.625rem;
+  border: none;
+  outline: none;
+}
 .container__left-ccontainer {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 .container__left-categorycontainer {
-  width: 50%;
+  border-top-left-radius: 0.1875rem;
+  border-bottom-left-radius: 0.1875rem;
+  width: 100%;
   background-color: #fff;
 }
 .container__left-categoryinput {
-  width: -moz-fit-content;
-  width: fit-content;
   display: flex;
   justify-content: space-between;
 }
@@ -86,9 +106,50 @@
 }
 
 .container__right {
-  width: 65%;
+  width: 70%;
   height: 100vh;
   background-color: brown;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container__right-upper {
+  width: 90%;
+  height: 40vh;
+  background-color: yellow;
+}
+.container__right-lower {
+  overflow-y: scroll;
+  width: 85%;
+  background-color: blue;
+  height: 60vh;
+}
+.container__right-taskscontainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.625rem;
+  margin: 1.25rem auto;
+  border: 0.0625rem dashed yellow;
+}
+.container__right-checkboxDiv {
+  width: 5%;
+  text-align: center;
+}
+.container__right-descriptionDiv {
+  width: 90%;
+  margin-left: 1.25rem;
+}
+.container__right-deleteDiv {
+  text-align: center;
+  width: 5%;
+}
+.container__right-checkboxEl {
+  width: 20px;
+  height: 20px;
+  border: 1px;
+  border-radius: 100px;
+  cursor: pointer;
 }
 
 * {

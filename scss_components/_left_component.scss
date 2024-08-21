@@ -3,7 +3,8 @@
 .container{
 
     &__left{
-        width: 35%;
+        // position: fixed;
+        width: 30%;
         height: 100vh;
         background-color: rgb(166, 243, 250);
         position: relative;
@@ -12,7 +13,7 @@
             position: absolute;
             width: 90%;
             height: fit-content;
-            top: 10%;
+            top: 15%;
             left: 5%;
             // background-color: green;
         }
@@ -26,6 +27,13 @@
         &-title{
             display: flex;
             flex-direction: column;
+        }
+
+        &-titleinput{
+            border-radius: px(3px);
+            padding: px(5px) px(10px);
+            border: none;
+            outline: none;
         }
 
         &-input{
@@ -61,12 +69,12 @@
             width: 48%;
         }
 
-        // &-duedate{
-        //     border-radius: px(3px);
-        //     padding: px(3px) px(10px);
-        //     border: none;
-        //     outline: none;
-        // }
+        &-duedateinput{
+            border-radius: px(3px);
+            padding: px(5px) px(10px);
+            border: none;
+            outline: none;
+        }
 
         &-priority{
             display: flex;
@@ -74,7 +82,7 @@
             width: 48%;
         }
 
-        &-select{
+        &-priorityselect{
             border-radius: px(3px);
             padding: px(5px) px(10px);
             border: none;
@@ -84,24 +92,42 @@
         &-categories{
             display: flex;
             flex-direction: column;
-            // background-color: burlywood;
+        }
+
+        &-categoryselect{
+            border-top-right-radius: px(3px);
+            border-bottom-right-radius: px(3px);
+            padding: px(5px) px(10px);
+            border: none;
+            outline: none;
         }
 
         &-ccontainer{
             display: flex;
             justify-content: space-between;
+            width: 100%;
         }
 
         &-categorycontainer{
-            width: 50%;
+            border-top-left-radius: px(3px);
+            border-bottom-left-radius: px(3px);
+            width: 100%;
             background-color: #fff;
         }
 
         &-categoryinput{
-            width: fit-content;
+            // width: fit-content;
             display: flex;
             justify-content: space-between;
+            // width: 100%;
         }
+
+        // &-cinput{
+        //     // border-radius: px(3px);
+        //     padding: px(5px) px(10px);
+        //     border: none;
+        //     outline: none;
+        // }
 
         &-button{
             border-radius: px(5px);

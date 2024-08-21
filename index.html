@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <title>Task-Manager</title>
 </head>
@@ -13,25 +14,25 @@
                 <form action="" class="container__left-form">
                     <div class="container__left-title">
                         <label for="title"><h4 class="container__left-categoryheadings">Task Title</h4></label>
-                        <input type="text" id="title" class="container__left-input" placeholder="Enter Task Title">
+                        <input type="text" id="title" class="container__left-titleinput" placeholder="Enter Task Title">
                     </div>
 
                     <div class="container__left-description">
                         <label for="description"><h4 class="container__left-categoryheadings">Task Description</h4></label>
-                        <textarea name="description" id="description" class="container__left-textarea"></textarea>
+                        <textarea name="description" id="description" class="container__left-textarea" placeholder="Description..."></textarea>
                     </div>
                     <div class="container__left-taskdetail">
                         <div class="container__left-duedate">
                             <label for="dueDate"><h4 class="container__left-categoryheadings">Due Date</h4></label>
-                            <input type="text" id="dueDate" class="container__left-input" placeholder="DD/ MM/ YYYY">
+                            <input type="date" id="dueDate" class="container__left-duedateinput">
                         </div>
                         <div class="container__left-priority">
                             <label for="priority"><h4 class="container__left-categoryheadings">Priority</h4></label>
-                            <select name="priority" id="priority" class="container__left-select">
-                                <option value=""></option>
-                                <option value="">High</option>
-                                <option value="">Medium</option>
-                                <option value="">Low</option>
+                            <select name="priority" id="priority" class="container__left-priorityselect">
+                                <option class="container__left-options" value="">Select Priority...</option>
+                                <option class="container__left-options" value="High-Priority">High-Priority</option>
+                                <option class="container__left-options" value="Medium-Priority">Medium-Priority</option>
+                                <option class="container__left-options" value="Low-Priority">Low-Priority</option>
                             </select>
                         </div>
                     </div>
@@ -42,14 +43,13 @@
 
                             </div>
                             <div class="container__left-categoryinput">
-                                <input type="text" placeholder="Select Category..." class="container__left-input">
-                                <select name="categories" id="categories" class="container__left-select">
-                                    <option value="categories"></option>
-                                    <option value="categories">Work</option>
-                                    <option value="categories">Personal</option>
-                                    <option value="categories">Work</option>
-                                    <option value="categories">Work</option>
-                                    <option value="categories">Work</option>
+                                <select name="categories" id="categories" class="container__left-categoryselect">
+                                    <option value="">Select Category...</option>
+                                    <option value="Work">Work</option>
+                                    <option value="Personal">Personal</option>
+                                    <option value="Assignment">Assignment</option>
+                                    <option value="Office">Office</option>
+                                    <option value="Random">Random</option>
                                 </select>
                             </div>
                         </div>
@@ -58,7 +58,12 @@
                 </form>
             </div>
         </div>
-        <div class="container__right"></div>
+        <div class="container__right">
+            <div class="container__right-upper"></div>
+            <div class="container__right-lower"></div>
+        </div>
     </div>
+
+    <script src="./build/index.js"></script>
 </body>
 </html>
