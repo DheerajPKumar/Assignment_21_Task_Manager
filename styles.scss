@@ -1,3 +1,7 @@
+@import "./scss_components/functions.scss";
+@import "./scss_components/left_component.scss";
+@import "./scss_components/right_component.scss";
+
 *{
     margin: 0;
     padding: 0;
@@ -8,16 +12,4 @@
     display: flex;
     width: 100vw;
     height: 100vh;
-
-    &__left{
-        width: 35%;
-        height: 100vh;
-        background-color: yellow;
-    }
-
-    &__right{
-        width: 65%;
-        height: 100vh;
-        background-color:brown;
-    }
 }

@@ -1,0 +1,116 @@
+@import "functions.scss";
+
+.container{
+
+    &__left{
+        width: 35%;
+        height: 100vh;
+        background-color: rgb(166, 243, 250);
+        position: relative;
+
+        &-task{
+            position: absolute;
+            width: 90%;
+            height: fit-content;
+            top: 10%;
+            left: 5%;
+            // background-color: green;
+        }
+
+        &-form{
+            display: flex;
+            flex-direction: column;
+            gap: px(25px);
+        }
+
+        &-title{
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-input{
+            border-radius: px(3px);
+            padding: px(5px) px(10px);
+            border: none;
+            outline: none;
+        }
+
+        &-description{
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-textarea{
+            border-radius: px(3px);
+            padding: px(5px) px(10px);
+            border: none;
+            outline: none;
+            // resize: none;
+            // height: 100%;
+        }
+
+        &-taskdetail{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        &-duedate{
+            display: flex;
+            flex-direction: column;
+            width: 48%;
+        }
+
+        // &-duedate{
+        //     border-radius: px(3px);
+        //     padding: px(3px) px(10px);
+        //     border: none;
+        //     outline: none;
+        // }
+
+        &-priority{
+            display: flex;
+            flex-direction: column;
+            width: 48%;
+        }
+
+        &-select{
+            border-radius: px(3px);
+            padding: px(5px) px(10px);
+            border: none;
+            outline: none;
+        }
+
+        &-categories{
+            display: flex;
+            flex-direction: column;
+            // background-color: burlywood;
+        }
+
+        &-ccontainer{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-categorycontainer{
+            width: 50%;
+            background-color: #fff;
+        }
+
+        &-categoryinput{
+            width: fit-content;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-button{
+            border-radius: px(5px);
+            border: none;
+            outline: none;
+            padding: px(10px);
+            background-color: #000;
+            color: #fff;
+            // margin-top: px(25px);
+        }
+    }
+}

@@ -1,0 +1,10 @@
+@import "functions.scss";
+
+.container{
+
+    &__right{
+        width: 65%;
+        height: 100vh;
+        background-color:brown;
+    }
+}

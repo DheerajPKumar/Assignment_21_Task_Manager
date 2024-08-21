@@ -8,7 +8,56 @@
 </head>
 <body>
     <div class="container">
-        <div class="container__left"></div>
+        <div class="container__left">
+            <div class="container__left-task">
+                <form action="" class="container__left-form">
+                    <div class="container__left-title">
+                        <label for="title"><h4 class="container__left-categoryheadings">Task Title</h4></label>
+                        <input type="text" id="title" class="container__left-input" placeholder="Enter Task Title">
+                    </div>
+
+                    <div class="container__left-description">
+                        <label for="description"><h4 class="container__left-categoryheadings">Task Description</h4></label>
+                        <textarea name="description" id="description" class="container__left-textarea"></textarea>
+                    </div>
+                    <div class="container__left-taskdetail">
+                        <div class="container__left-duedate">
+                            <label for="dueDate"><h4 class="container__left-categoryheadings">Due Date</h4></label>
+                            <input type="text" id="dueDate" class="container__left-input" placeholder="DD/ MM/ YYYY">
+                        </div>
+                        <div class="container__left-priority">
+                            <label for="priority"><h4 class="container__left-categoryheadings">Priority</h4></label>
+                            <select name="priority" id="priority" class="container__left-select">
+                                <option value=""></option>
+                                <option value="">High</option>
+                                <option value="">Medium</option>
+                                <option value="">Low</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="container__left-categories">
+                        <h4 class="container__left-categoryheadings"><h4 class="container__left-categoryheadings">Categories</h4></h4>
+                        <div class="container__left-ccontainer">
+                            <div class="container__left-categorycontainer">
+
+                            </div>
+                            <div class="container__left-categoryinput">
+                                <input type="text" placeholder="Select Category..." class="container__left-input">
+                                <select name="categories" id="categories" class="container__left-select">
+                                    <option value="categories"></option>
+                                    <option value="categories">Work</option>
+                                    <option value="categories">Personal</option>
+                                    <option value="categories">Work</option>
+                                    <option value="categories">Work</option>
+                                    <option value="categories">Work</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="container__left-button">ADD</button>
+                </form>
+            </div>
+        </div>
         <div class="container__right"></div>
     </div>
 </body>

@@ -1,3 +1,96 @@
+.container__left {
+  width: 35%;
+  height: 100vh;
+  background-color: rgb(166, 243, 250);
+  position: relative;
+}
+.container__left-task {
+  position: absolute;
+  width: 90%;
+  height: -moz-fit-content;
+  height: fit-content;
+  top: 10%;
+  left: 5%;
+}
+.container__left-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5625rem;
+}
+.container__left-title {
+  display: flex;
+  flex-direction: column;
+}
+.container__left-input {
+  border-radius: 0.1875rem;
+  padding: 0.3125rem 0.625rem;
+  border: none;
+  outline: none;
+}
+.container__left-description {
+  display: flex;
+  flex-direction: column;
+}
+.container__left-textarea {
+  border-radius: 0.1875rem;
+  padding: 0.3125rem 0.625rem;
+  border: none;
+  outline: none;
+}
+.container__left-taskdetail {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.container__left-duedate {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+}
+.container__left-priority {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+}
+.container__left-select {
+  border-radius: 0.1875rem;
+  padding: 0.3125rem 0.625rem;
+  border: none;
+  outline: none;
+}
+.container__left-categories {
+  display: flex;
+  flex-direction: column;
+}
+.container__left-ccontainer {
+  display: flex;
+  justify-content: space-between;
+}
+.container__left-categorycontainer {
+  width: 50%;
+  background-color: #fff;
+}
+.container__left-categoryinput {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  justify-content: space-between;
+}
+.container__left-button {
+  border-radius: 0.3125rem;
+  border: none;
+  outline: none;
+  padding: 0.625rem;
+  background-color: #000;
+  color: #fff;
+}
+
+.container__right {
+  width: 65%;
+  height: 100vh;
+  background-color: brown;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,14 +101,4 @@
   display: flex;
   width: 100vw;
   height: 100vh;
-}
-.container__left {
-  width: 35%;
-  height: 100vh;
-  background-color: yellow;
-}
-.container__right {
-  width: 65%;
-  height: 100vh;
-  background-color: brown;
 }/*# sourceMappingURL=styles.css.map */
