@@ -119,6 +119,7 @@
             // width: fit-content;
             display: flex;
             justify-content: space-between;
+            position:relative;
             // width: 100%;
         }
 
@@ -129,6 +130,28 @@
         //     outline: none;
         // }
 
+        &-categoryDiv{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: px(5px);
+            background-color: #9BE2DB;
+            color: #1C6A62;
+            border-radius: px(10px);
+            padding: px(5px) px(10px);
+            margin: px(5px) px(5px);
+            width: fit-content;
+        }
+
+        &-deleteBtn{
+            background-color: transparent;
+            border: none;
+            outline: none;
+            width: fit-content;
+            margin: px(5px) px(5px);
+            color: #1C6A62;
+        }
+
         &-button{
             border-radius: px(5px);
             border: none;
@@ -136,6 +159,7 @@
             padding: px(10px);
             background-color: #000;
             color: #fff;
+            cursor: pointer;
             // margin-top: px(25px);
         }
     }

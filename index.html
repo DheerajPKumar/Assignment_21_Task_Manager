@@ -40,7 +40,7 @@
                         <h4 class="container__left-categoryheadings"><h4 class="container__left-categoryheadings">Categories</h4></h4>
                         <div class="container__left-ccontainer">
                             <div class="container__left-categorycontainer">
-
+                                
                             </div>
                             <div class="container__left-categoryinput">
                                 <select name="categories" id="categories" class="container__left-categoryselect">
@@ -59,7 +59,43 @@
             </div>
         </div>
         <div class="container__right">
-            <div class="container__right-upper"></div>
+            <div class="container__right-upper">
+                <h1 class="container__right-heading">Task Manager</h1>
+                <div class="container__right-title">
+                    <label for="title"><h4 class="container__right-categoryheadings">Search</h4></label>
+                    <input type="text" id="title" class="container__right-titleinput" placeholder="Enter Task Title">
+                </div>
+                <div class="container__right-search">
+                    <div class="container__right-categoryinput">
+                        
+                        <label for="categories">Filter by Categories</label>
+                        <select name="categories" id="categories" class="container__right-categoryselect">
+                            <option value="">Select Category...</option>
+                            <option value="Work">Work</option>
+                            <option value="Personal">Personal</option>
+                            <option value="Assignment">Assignment</option>
+                            <option value="Office">Office</option>
+                            <option value="Random">Random</option>
+                        </select>
+                    </div>
+                    <div class="container__right-priority">
+                        <label for="priority"><h4 class="container__right-categoryheadings">Sort by Priority</h4></label>
+                        <select name="priority" id="priority" class="container__right-priorityselect">
+                            <option class="container__right-options" value="">Select Priority...</option>
+                            <option class="container__right-options" value="High-Priority">High-Priority</option>
+                            <option class="container__right-options" value="Medium-Priority">Medium-Priority</option>
+                            <option class="container__right-options" value="Low-Priority">Low-Priority</option>
+                        </select>
+                    </div>
+                    <div class="container__right-completed">
+                        <label for="completed"><h4 class="container__right-categoryheadings">Filter</h4></label>
+                        <select name="completed" id="completed" class="container__right-completedselect">
+                            <option class="container__right-options" value="High-completed">Completed</option>
+                            <option class="container__right-options" value="Medium-completed">Pending</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
             <div class="container__right-lower"></div>
         </div>
     </div>
