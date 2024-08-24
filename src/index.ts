@@ -191,7 +191,11 @@ function createTask() {
         console.log("No data found in localStorage for 'taskDetails'.");
     }
 
-    // localStorage.clear();
+    taskTitle.value = "";
+    taskDueDate.value = "";
+    taskPriority.value = "";
+    taskDescription.value = "";
+    categoryContainer.innerHTML = "";
 }
 
 function filter(searchVal: string) {
@@ -392,4 +396,3 @@ addBtn.addEventListener("click", (e) => {
     createTask();
     // console.log(allTaskArr);
 });
-
