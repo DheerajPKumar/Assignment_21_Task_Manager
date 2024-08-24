@@ -42,54 +42,120 @@
             justify-content: space-between;
         }
 
-        &-ccontainer{
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-        }
+        // &-categoriescontainer{
+        //     width: 100%;
+        //     background-color: #fff;
+        // }
 
-        &-categorycontainer{
-            border-top-left-radius: px(3px);
-            border-bottom-left-radius: px(3px);
-            width: 100%;
-            background-color: #fff;
-            // height: 50px;
-        }
+        // &-ccontainer{
+        //     display: flex;
+        //     justify-content: space-between;
+        //     width: 100%;
+        // }
+
+        // &-categorycontainer{
+        //     border-top-left-radius: px(3px);
+        //     border-bottom-left-radius: px(3px);
+        //     width: 100%;
+        //     background-color: #fff;
+        //     // height: 50px;
+        // }
 
         &-categoryinput{
             display: flex;
             flex-direction: column;
-            // justify-content: space-between;
-            // position:relative;
             gap: px(5px);
             width: 45%;
         }
 
-        &-categoryDiv{
+        &-selectcontainer{
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: px(5px);
-            background-color: #9BE2DB;
-            color: #1C6A62;
-            border-radius: px(10px);
-            padding: px(5px) px(10px);
-            margin: px(5px) px(5px);
-            width: fit-content;
+            width: 100%;    
+            border: px(1px) solid gray;
+            // border-right: 0;
+            border-radius: px(3px);
         }
 
+        // &-categoryDiv{
+        //     display: flex;
+        //     align-items: center;
+        //     justify-content: space-between;
+        //     gap: px(5px);
+        //     background-color: #9BE2DB;
+        //     color: #1C6A62;
+        //     border-radius: px(10px);
+        //     padding: px(5px) px(10px);
+        //     margin: px(5px) px(5px);
+        //     width: fit-content;
+        // }
+
         &-categoryselect{
-            border-radius: px(3px);
+            width: 50%;
             border: none;
             outline: none;
             height: px(40px);
             padding: px(5px) px(10px);
-            border: px(1px) solid gray;
+            // border: px(1px) solid gray;
+            border-radius: px(3px);
+            // border-right: px(1px) solid gray;
         }
 
-        &-categoryinput label{
-            font-weight: bold;
+        &-chipcontainer{
+            width: 65%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            align-items: center;
+            padding-left: 10px;
+            margin: px(5px) 0;
         }
+
+        &-chip {
+            display: flex;
+            align-items: center;
+            padding: 5px 10px;
+            border-radius: 16px;
+            background-color: #9BE2DB;
+            color: #1C6A62;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        &-deleteBtn {
+            margin-left: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #1C6A62;
+        }
+
+        // &-categoryinput label{
+        //     font-weight: bold;
+        // }
+
+        // &-selectedCategories {
+        //     margin-top: 10px;
+        //     display: flex;
+        //     flex-wrap: wrap;
+        // }
+        
+        // &-categoryChip {
+        //     background-color: #007bff;
+        //     color: white;
+        //     padding: 5px 10px;
+        //     border-radius: 15px;
+        //     margin: 5px;
+        //     display: flex;
+        //     align-items: center;
+        // }
+        
+        // &-categoryChip button {
+        //     background: none;
+        //     border: none;
+        //     color: white;
+        //     font-size: 12px;
+        //     margin-left: 5px;
+        //     cursor: pointer;
+        // }
 
         &-priority{
             display: flex;
@@ -154,7 +220,7 @@
             display: flex;
             justify-content: space-between;
             padding: px(10px);
-            margin: px(20px) auto;
+            margin: px(30px) auto;
             border: px(1px) dashed gray;
         }
 

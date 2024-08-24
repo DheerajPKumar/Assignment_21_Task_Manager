@@ -1,7 +1,10 @@
+.container__emptyfield {
+  margin-top: 0.625rem;
+}
 .container__left {
   width: 30%;
   height: 100vh;
-  background-color: rgb(166, 243, 250);
+  background-color: rgb(127, 177, 181);
   position: relative;
 }
 .container__left-task {
@@ -95,7 +98,7 @@
 .container__left-categoryinput {
   display: flex;
   justify-content: space-between;
-  position: relative;
+  left: 50%;
 }
 .container__left-categoryDiv {
   display: flex;
@@ -104,8 +107,8 @@
   gap: 0.3125rem;
   background-color: #9BE2DB;
   color: #1C6A62;
-  border-radius: 0.625rem;
-  padding: 0.3125rem 0.625rem;
+  border-radius: 1rem;
+  padding: 0 0.625rem;
   margin: 0.3125rem 0.3125rem;
   width: -moz-fit-content;
   width: fit-content;
@@ -118,6 +121,7 @@
   width: fit-content;
   margin: 0.3125rem 0.3125rem;
   color: #1C6A62;
+  cursor: pointer;
 }
 .container__left-button {
   border-radius: 0.3125rem;
@@ -163,46 +167,50 @@
   display: flex;
   justify-content: space-between;
 }
-.container__right-ccontainer {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-.container__right-categorycontainer {
-  border-top-left-radius: 0.1875rem;
-  border-bottom-left-radius: 0.1875rem;
-  width: 100%;
-  background-color: #fff;
-}
 .container__right-categoryinput {
   display: flex;
   flex-direction: column;
   gap: 0.3125rem;
   width: 45%;
 }
-.container__right-categoryDiv {
+.container__right-selectcontainer {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.3125rem;
-  background-color: #9BE2DB;
-  color: #1C6A62;
-  border-radius: 0.625rem;
-  padding: 0.3125rem 0.625rem;
-  margin: 0.3125rem 0.3125rem;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 100%;
+  border: 0.0625rem solid gray;
+  border-radius: 0.1875rem;
 }
 .container__right-categoryselect {
-  border-radius: 0.1875rem;
+  width: 50%;
   border: none;
   outline: none;
   height: 2.5rem;
   padding: 0.3125rem 0.625rem;
-  border: 0.0625rem solid gray;
+  border-radius: 0.1875rem;
 }
-.container__right-categoryinput label {
+.container__right-chipcontainer {
+  width: 65%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+  padding-left: 10px;
+  margin: 0.3125rem 0;
+}
+.container__right-chip {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 16px;
+  background-color: #9BE2DB;
+  color: #1C6A62;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+.container__right-deleteBtn {
+  margin-left: 10px;
+  cursor: pointer;
   font-weight: bold;
+  color: #1C6A62;
 }
 .container__right-priority {
   display: flex;
@@ -248,7 +256,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0.625rem;
-  margin: 1.25rem auto;
+  margin: 1.875rem auto;
   border: 0.0625rem dashed gray;
 }
 .container__right-dueDiv {

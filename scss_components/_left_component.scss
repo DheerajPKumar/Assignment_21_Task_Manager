@@ -2,11 +2,16 @@
 
 .container{
 
+    &__emptyfield{
+        // position: relative;
+        margin-top: px(10px);
+    }
+
     &__left{
         // position: fixed;
         width: 30%;
         height: 100vh;
-        background-color: rgb(166, 243, 250);
+        background-color: rgb(127, 177, 181);
         position: relative;
 
         &-task{
@@ -116,19 +121,10 @@
         }
 
         &-categoryinput{
-            // width: fit-content;
             display: flex;
             justify-content: space-between;
-            position:relative;
-            // width: 100%;
+            left: 50%;
         }
-
-        // &-cinput{
-        //     // border-radius: px(3px);
-        //     padding: px(5px) px(10px);
-        //     border: none;
-        //     outline: none;
-        // }
 
         &-categoryDiv{
             display: flex;
@@ -137,8 +133,8 @@
             gap: px(5px);
             background-color: #9BE2DB;
             color: #1C6A62;
-            border-radius: px(10px);
-            padding: px(5px) px(10px);
+            border-radius: px(16px);
+            padding: 0 px(10px);
             margin: px(5px) px(5px);
             width: fit-content;
         }
@@ -150,6 +146,7 @@
             width: fit-content;
             margin: px(5px) px(5px);
             color: #1C6A62;
+            cursor: pointer;
         }
 
         &-button{

@@ -47,9 +47,9 @@
                                     <option value="">Select Category...</option>
                                     <option value="Work">Work</option>
                                     <option value="Personal">Personal</option>
-                                    <option value="Assignment">Assignment</option>
+                                    <!-- <option value="Assignment">Assignment</option> -->
                                     <option value="Office">Office</option>
-                                    <option value="Random">Random</option>
+                                    <!-- <option value="Random">Random</option> -->
                                 </select>
                             </div>
                         </div>
@@ -67,31 +67,41 @@
                 </div>
                 <div class="container__right-search">
                     <div class="container__right-categoryinput">
-                        
+                        <label for="categories"><h4 class="container__right-categoryheadings">Filter by Category</h4></label>
+                      
+                        <div id="selectWrapper" class="container__right-selectcontainer">
+                          <div id="chipContainer" class="container__right-chipcontainer"></div>
+                            <select name="categories" id="categories" class="container__right-categoryselect">
+                                <option value="">Select Category...</option>
+                                <option value="Work">Work</option>
+                                <option value="Personal">Personal</option>
+                                <option value="Office">Office</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- <div class="container__right-categoryinput">
                         <label for="categories">Filter by Categories</label>
                         <select name="categories" id="categories" class="container__right-categoryselect">
                             <option value="">Select Category...</option>
                             <option value="Work">Work</option>
                             <option value="Personal">Personal</option>
-                            <option value="Assignment">Assignment</option>
                             <option value="Office">Office</option>
-                            <option value="Random">Random</option>
                         </select>
-                    </div>
+                    </div>                     -->
                     <div class="container__right-priority">
                         <label for="priority"><h4 class="container__right-categoryheadings">Sort by Priority</h4></label>
                         <select name="priority" id="priority" class="container__right-priorityselect">
-                            <option class="container__right-options" value="">Select Priority...</option>
-                            <option class="container__right-options" value="High-Priority">High-Priority</option>
-                            <option class="container__right-options" value="Medium-Priority">Medium-Priority</option>
-                            <option class="container__right-options" value="Low-Priority">Low-Priority</option>
+                            <option class="container__right-options" value="">Select Order...</option>
+                            <option class="container__right-options" value="High-Low">High-Low</option>
+                            <option class="container__right-options" value="Low-High">Low-High</option>
                         </select>
                     </div>
                     <div class="container__right-completed">
                         <label for="completed"><h4 class="container__right-categoryheadings">Filter</h4></label>
                         <select name="completed" id="completed" class="container__right-completedselect">
-                            <option class="container__right-options" value="High-completed">Completed</option>
-                            <option class="container__right-options" value="Medium-completed">Pending</option>
+                            <option class="container__right-options" value="">All Tasks</option>
+                            <option class="container__right-options" value="Completed">Completed</option>
+                            <option class="container__right-options" value="Pending">Pending</option>
                         </select>
                     </div>
                 </div>
