@@ -1,15 +1,13 @@
 @import "functions.scss";
+@import "colors.scss";
 
 .container{
 
     &__right{
         width: 70%;
         height: 100vh;
-        // background-color:brown;
-        display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        @include flexCenter;
 
         &-heading{
             font-size: px(40px);
@@ -22,184 +20,105 @@
         }
 
         &-title{
-            display: flex;
-            flex-direction: column;
-            gap: px(5px);
             margin-bottom: px(10px);
+            @include columnDir;
+            @include commonRightGap;
         }
 
         &-titleinput{
-            border-radius: px(3px);
-            border: none;
-            outline: none;
             height: px(40px);
-            padding: px(5px) px(10px);
-            border: px(1px) solid gray;
+            @include commomRightBorderRadius;
+            @include borderOutlineNone;
+            @include commonRightPadding;
+            @include commomRightBorder;
         }
 
         &-search{
-            display: flex;
-            justify-content: space-between;
+            @include justifyBetween;
         }
 
-        // &-categoriescontainer{
-        //     width: 100%;
-        //     background-color: #fff;
-        // }
-
-        // &-ccontainer{
-        //     display: flex;
-        //     justify-content: space-between;
-        //     width: 100%;
-        // }
-
-        // &-categorycontainer{
-        //     border-top-left-radius: px(3px);
-        //     border-bottom-left-radius: px(3px);
-        //     width: 100%;
-        //     background-color: #fff;
-        //     // height: 50px;
-        // }
-
         &-categoryinput{
-            display: flex;
-            flex-direction: column;
-            gap: px(5px);
             width: 45%;
+            @include columnDir;
+            @include commonRightGap;
         }
 
         &-selectcontainer{
             display: flex;
             width: 100%;    
-            border: px(1px) solid gray;
-            // border-right: 0;
-            border-radius: px(3px);
+            @include commomRightBorder;
+            @include commomRightBorderRadius;
         }
-
-        // &-categoryDiv{
-        //     display: flex;
-        //     align-items: center;
-        //     justify-content: space-between;
-        //     gap: px(5px);
-        //     background-color: #9BE2DB;
-        //     color: #1C6A62;
-        //     border-radius: px(10px);
-        //     padding: px(5px) px(10px);
-        //     margin: px(5px) px(5px);
-        //     width: fit-content;
-        // }
 
         &-categoryselect{
             width: 50%;
-            border: none;
-            outline: none;
             height: px(40px);
-            padding: px(5px) px(10px);
-            // border: px(1px) solid gray;
-            border-radius: px(3px);
-            // border-right: px(1px) solid gray;
+            @include borderOutlineNone;
+            @include commonRightPadding;
+            @include commomRightBorderRadius;
         }
 
         &-chipcontainer{
             width: 65%;
-            display: flex;
             flex-wrap: wrap;
-            gap: 5px;
-            align-items: center;
             padding-left: 10px;
             margin: px(5px) 0;
+            @include alignCenter;
+            @include commonRightGap;
         }
 
         &-chip {
-            display: flex;
-            align-items: center;
-            padding: 5px 10px;
-            border-radius: 16px;
-            background-color: #9BE2DB;
-            color: #1C6A62;
-            border: 1px solid #ccc;
-            font-size: 14px;
+            border-radius: px(16px);
+            background-color: $chip-bgColor;
+            color: $chip-color;
+            font-size: px(14px);
+            @include alignCenter;
+            @include commonRightPadding;
         }
 
         &-deleteBtn {
             margin-left: 10px;
             cursor: pointer;
             font-weight: bold;
-            color: #1C6A62;
+            color: $chip-color;
         }
 
-        // &-categoryinput label{
-        //     font-weight: bold;
-        // }
-
-        // &-selectedCategories {
-        //     margin-top: 10px;
-        //     display: flex;
-        //     flex-wrap: wrap;
-        // }
-        
-        // &-categoryChip {
-        //     background-color: #007bff;
-        //     color: white;
-        //     padding: 5px 10px;
-        //     border-radius: 15px;
-        //     margin: 5px;
-        //     display: flex;
-        //     align-items: center;
-        // }
-        
-        // &-categoryChip button {
-        //     background: none;
-        //     border: none;
-        //     color: white;
-        //     font-size: 12px;
-        //     margin-left: 5px;
-        //     cursor: pointer;
-        // }
-
         &-priority{
-            display: flex;
-            flex-direction: column;
-            gap: px(5px);
             width: 25%;
+            @include columnDir;
+            @include commonRightGap;
         }
 
         &-priorityselect{
-            border-radius: px(3px);
-            border: none;
-            outline: none;
             height: px(40px);
-            padding: px(5px) px(10px);
-            border: px(1px) solid gray;
+            @include commomRightBorderRadius;
+            @include borderOutlineNone;
+            @include commonRightPadding;
+            @include commomRightBorder;
         }
 
         &-completed{
-            display: flex;
-            flex-direction: column;
-            gap: px(5px);
             width: 25%;
+            @include columnDir;
+            @include commonRightGap;
         }
 
         &-completedselect{
-            border-radius: px(3px);
-            border: none;
-            outline: none;
             height: px(40px);
-            padding: px(5px) px(10px);
-            border: px(1px) solid gray;
+            @include commomRightBorderRadius;
+            @include borderOutlineNone;
+            @include commonRightPadding;
+            @include commomRightBorder;
         }
 
         &-upper{
             width: 90%;
             height: 40vh;
-            // background-color: yellow;
-            // padding: px(10px) px(20px);
         }
 
         &-lower{
             overflow-y: scroll;
             width: 90%;
-            // background-color: blue;
             height: 60vh;
         }
 
@@ -207,21 +126,11 @@
             width: 0;
         }
 
-        // ::-webkit-scrollbar-track {
-        //     background: #f1f1f1;
-        // }
-        
-        // ::-webkit-scrollbar-thumb {
-        //     background-color: #888; 
-        //     border-radius: 2px;
-        // }
-
         &-taskscontainer{
-            display: flex;
-            justify-content: space-between;
             padding: px(10px);
             margin: px(30px) auto;
-            border: px(1px) dashed gray;
+            border: px(1px) dashed $grayColor;
+            @include justifyBetween;
         }
 
         &-dueDiv{
@@ -230,28 +139,22 @@
             margin-bottom: px(10px);
         }
 
-        // &-borderDiv{
-        //     border: 1px solid #1C6A62;
-        //     line-height: px(14px);   
-        // }
-
         &-borderDivH{
-            border: 1px solid #E41A1A;
+            border: 1px solid $highp-Color;
             line-height: px(14px);   
         }
 
         &-borderDivM{
-            border: 1px solid #E4971A;
+            border: 1px solid $mediump-Color;
             line-height: px(14px);   
         }
 
         &-borderDivL{
-            border: 1px solid #20B10D;
+            border: 1px solid $lowp-Color;
             line-height: px(14px);   
         }
 
         &-catDiv{
-            // background-color: green;
             display: flex;
             gap: px(20px);
             margin: px(5px) 0;
@@ -260,10 +163,10 @@
         }
 
         &-category{
-            background-color: #9BE2DB;
-            color: #1C6A62;
+            background-color: $chip-bgColor;
+            color: $chip-color;
             border-radius: px(10px);
-            padding: px(5px) px(10px);
+            @include commonRightPadding;
         }
 
         &-checkboxDiv{
@@ -286,31 +189,23 @@
         }
 
         &-checkboxEl{
-            width: 20px;
-            height: 20px;
-            border: 1px;
-            border-radius: 100px;
+            width: px(20px);
+            height: px(20px);
+            border: px(1px);
+            border-radius: px(100px);
             cursor: pointer;
         }
 
         &-highPriority{
-            color:#E41A1A;
+            color: $highp-Color;
         }
 
         &-mediumPriority{
-            color: #E4971A;
+            color: $mediump-Color;
         }
 
         &-lowPriority{
-            color: #20B10D;
+            color: $lowp-Color;
         }
-
-        // &-deleteDiv i{
-        //     width: 20px;
-        //     height: 20px;
-        //     border: 1px;
-        //     border-radius: 100px;
-        //     cursor: pointer;
-        // }
     }
 }

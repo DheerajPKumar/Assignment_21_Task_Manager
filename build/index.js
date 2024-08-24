@@ -1,6 +1,5 @@
 "use strict";
 var taskTitle = document.querySelector(".container__left-titleinput");
-taskTitle.required = true;
 var taskDueDate = document.querySelector(".container__left-duedateinput");
 var taskPriority = document.querySelector(".container__left-priorityselect");
 var taskCategory = document.querySelector(".container__left-categoryselect");
@@ -12,9 +11,35 @@ var categoryContainer = document.querySelector(".container__left-categorycontain
 var searchEl = document.querySelector(".container__right-titleinput");
 var priorityEl = document.querySelector(".container__right-priority");
 var statusEl = document.querySelector(".container__right-completedselect");
-// console.log(taskTitle.value);
+var el = document.querySelector(".container__right-categoryselect");
+var categorySelect = document.querySelector(".container__right-categoryselect");
+var chipContainer = document.querySelector(".container__right-chipcontainer");
+var errorContainer = document.querySelector(".container__error");
 var allTaskArr = [];
+var isEmpty = false;
 function createTask() {
+    if (!taskTitle.value.trim() || !taskDueDate.value.trim() || !taskPriority.value.trim() || !taskDescription.value.trim()) {
+        if (!isEmpty) {
+            var errorDiv_1 = document.createElement("div");
+            var errorPara = document.createElement('p');
+            var deletBtn = document.createElement("button");
+            errorPara.textContent = "All fields are mandatory. Please check !!!";
+            deletBtn.innerHTML = "<i class=\"fa-regular fa-circle-xmark\"></i>";
+            errorDiv_1.classList.add("container__error-handleerror");
+            errorPara.classList.add("container__error-para");
+            deletBtn.classList.add("container__error-delete");
+            errorDiv_1.appendChild(errorPara);
+            errorDiv_1.appendChild(deletBtn);
+            errorContainer.appendChild(errorDiv_1);
+            isEmpty = true;
+            deletBtn.addEventListener("click", function () {
+                errorDiv_1.remove();
+                isEmpty = false;
+            });
+        }
+        return;
+    }
+    isEmpty = false;
     var newTask = document.createElement("div");
     var checkboxDiv = document.createElement("div");
     var descriptionDiv = document.createElement("div");
@@ -42,6 +67,11 @@ function createTask() {
     });
     deleteDiv.addEventListener("click", function () {
         newTask.remove();
+        var taskId = newTask.getAttribute("data-id");
+        if (taskId) {
+            allTaskArr = allTaskArr.filter(function (task) { return task.id !== taskId; });
+            localStorage.setItem("taskDetails", JSON.stringify(allTaskArr));
+        }
     });
     checkboxDiv.classList.add("container__right-checkboxDiv");
     deleteDiv.classList.add("container__right-deleteDiv");
@@ -51,17 +81,15 @@ function createTask() {
     newTask.classList.add("container__right-taskscontainer");
     checkbox.type = "checkbox";
     checkboxDiv.appendChild(checkbox);
-    // taskTitle.setAttribute("required", "true");
     titleText.textContent = taskTitle.value;
     titleText.classList.add("container__right-tasktitle");
-    // titleText.setAttribute("required", "true");
     descriptionDiv.appendChild(titleText);
     newTask.appendChild(checkboxDiv);
     dueDate.textContent = taskDueDate.value;
     var date = new Date(taskDueDate.value);
-    var day = date.toLocaleString('en-IN', { weekday: 'short' });
+    var day = date.toLocaleString("en-IN", { weekday: "short" });
     var dayNo = date.getDate();
-    var month = date.toLocaleString('en-IN', { month: 'short' });
+    var month = date.toLocaleString("en-IN", { month: "short" });
     var year = date.getFullYear();
     dueDate.textContent = "".concat(day, " ").concat(month, " ").concat(dayNo, " ").concat(year);
     dueDiv.appendChild(dueDate);
@@ -71,12 +99,10 @@ function createTask() {
     dueDiv.appendChild(dueTime);
     borderDiv2.classList.add("container__right-borderDiv");
     dueDiv.appendChild(borderDiv2);
-    // console.log("Printing TaksPriority",taskPriority.value);
     if (taskPriority.value !== "") {
         taskPriorityElement.textContent = taskPriority.value;
     }
     if (taskPriority.value === "High-Priority") {
-        // console.log("Hello Dheeraj");
         dueDiv.classList.add("container__right-highPriority");
         borderDiv1.classList.add("container__right-borderDivH");
         borderDiv2.classList.add("container__right-borderDivH");
@@ -93,7 +119,7 @@ function createTask() {
     }
     dueDiv.appendChild(taskPriorityElement);
     descriptionDiv.appendChild(dueDiv);
-    var selectedCategories = categoryContainer.querySelectorAll(".container__left-categoryDiv div");
+    var selectedCategories = Array.from(categoryContainer.querySelectorAll(".container__left-categoryDiv div"));
     selectedCategories.forEach(function (categoryElement) {
         var category = document.createElement("div");
         category.textContent = categoryElement.textContent;
@@ -109,23 +135,28 @@ function createTask() {
     deleteDiv.innerHTML = "<i class=\"fa-solid fa-trash-can\"></i>";
     newTask.appendChild(deleteDiv);
     taskContainer.appendChild(newTask);
+    var allCategories = selectedCategories.map(function (categoryElement) { var _a; return ((_a = categoryElement.textContent) === null || _a === void 0 ? void 0 : _a.trim()) || ""; }).join(", ");
+    var taskId = Date.now().toString();
+    newTask.setAttribute("data-id", taskId);
     var tasksObj = {
+        id: taskId,
         title: taskTitle.value,
         dueDate: dueDate.textContent,
         priority: taskPriority.value,
-        category: taskCategory.value,
-        description: taskDescription.value
+        category: allCategories,
+        description: taskDescription.value,
     };
     allTaskArr.push(tasksObj);
     var stringArr = JSON.stringify(allTaskArr);
-    localStorage.setItem("taskDetaisl", stringArr);
-    // tasksObj.title = titleText;
-    // taskTitle.value = "";
-    // taskDueDate.value = "";
-    // taskPriority.value = "";
-    // taskDescription.value = "";
-    // taskCategory.value = "";
-    // categoryContainer.innerHTML = "";
+    localStorage.setItem("taskDetails", stringArr);
+    var storedData = localStorage.getItem("taskDetails");
+    if (storedData) {
+        console.log(JSON.parse(storedData));
+    }
+    else {
+        console.log("No data found in localStorage for 'taskDetails'.");
+    }
+    // localStorage.clear();
 }
 function filter(searchVal) {
     var searchLower = searchVal.toLowerCase().trim();
@@ -161,13 +192,13 @@ function filterPriority(priorityVal) {
         var priorityOrder = {
             "High-Priority": 1,
             "Medium-Priority": 2,
-            "Low-Priority": 3
+            "Low-Priority": 3,
         };
         if (priorityVal === "High-Low") {
-            return (priorityOrder[priorityA]) - (priorityOrder[priorityB]);
+            return priorityOrder[priorityA] - priorityOrder[priorityB];
         }
         else if (priorityVal === "Low-High") {
-            return (priorityOrder[priorityB]) - (priorityOrder[priorityA]);
+            return priorityOrder[priorityB] - priorityOrder[priorityA];
         }
         return 0;
     });
@@ -199,21 +230,21 @@ function filterStatus(statusVal) {
 }
 statusEl.addEventListener("change", function () {
     var statusVal = statusEl.value;
-    console.log("first", statusVal);
+    // console.log("first", statusVal);
     filterStatus(statusVal);
 });
-taskCategory.addEventListener('change', function () {
+taskCategory.addEventListener("change", function () {
     var selectedCategory = taskCategory.value;
     var existingCategory = Array.from(categoryContainer.children).find(function (child) {
-        var categoryElement = child.querySelector('div');
-        return categoryElement && categoryElement.textContent === selectedCategory;
+        var categoryElement = child.querySelector("div");
+        return (categoryElement && categoryElement.textContent === selectedCategory);
     });
     if (existingCategory) {
         return;
     }
-    var categoryDiv = document.createElement('div');
-    var category = document.createElement('div');
-    var deleteBtn = document.createElement('button');
+    var categoryDiv = document.createElement("div");
+    var category = document.createElement("div");
+    var deleteBtn = document.createElement("button");
     category.textContent = selectedCategory;
     categoryDiv.classList.add("container__left-categoryDiv");
     deleteBtn.innerHTML = "<i class=\"fa-regular fa-circle-xmark\"></i>";
@@ -221,27 +252,26 @@ taskCategory.addEventListener('change', function () {
     categoryDiv.appendChild(category);
     categoryDiv.appendChild(deleteBtn);
     categoryContainer.appendChild(categoryDiv);
-    deleteBtn.addEventListener('click', function () {
+    deleteBtn.addEventListener("click", function () {
         categoryDiv.remove();
     });
 });
-var el = document.querySelector('.container__right-categoryselect');
-el.addEventListener('change', function () {
+el.addEventListener("change", function () {
     var selectedOption = this.value;
     if (selectedOption) {
-        var chipContainer_1 = document.getElementById('chipContainer');
+        var chipContainer_1 = document.getElementById("chipContainer");
         if (chipContainer_1) {
             var children = Array.from(chipContainer_1.children);
             if (children.some(function (chip) { var _a; return (_a = chip.textContent) === null || _a === void 0 ? void 0 : _a.includes(selectedOption); })) {
                 return;
             }
-            var newChip_1 = document.createElement('div');
+            var newChip_1 = document.createElement("div");
             newChip_1.classList.add("container__right-chip");
             newChip_1.textContent = selectedOption;
-            var deleteBtn = document.createElement('span');
+            var deleteBtn = document.createElement("span");
             deleteBtn.classList.add("container__right-deleteBtn");
             deleteBtn.innerHTML = "<i class=\"fa-regular fa-circle-xmark\"></i>";
-            deleteBtn.addEventListener('click', function () {
+            deleteBtn.addEventListener("click", function () {
                 chipContainer_1.removeChild(newChip_1);
             });
             newChip_1.appendChild(deleteBtn);
@@ -249,27 +279,41 @@ el.addEventListener('change', function () {
         }
     }
 });
+function filterCategory() {
+    var selectedChips = Array.from(document.querySelectorAll(".container__right-chipcontainer .container__right-chip"));
+    var selectedCategories = selectedChips.map(function (chip) { var _a; return ((_a = chip.textContent) === null || _a === void 0 ? void 0 : _a.trim()) || ""; });
+    var tasks = document.querySelectorAll(".container__right-taskscontainer");
+    tasks.forEach(function (task) {
+        var taskEl = task;
+        var taskCategories = Array.from(task.querySelectorAll(".container__right-category")).map(function (category) { var _a; return ((_a = category.textContent) === null || _a === void 0 ? void 0 : _a.trim()) || ""; });
+        var matchesCategory = selectedCategories.length === 0 ||
+            selectedCategories.some(function (cat) { return taskCategories.includes(cat); });
+        taskEl.style.display = matchesCategory ? "" : "none";
+    });
+}
+categorySelect.addEventListener("change", function () {
+    var selectedCategory = categorySelect.value.trim();
+    if (selectedCategory) {
+        var existingChips = Array.from(chipContainer.querySelectorAll(".container__right-chip"));
+        if (!existingChips.some(function (chip) { var _a; return ((_a = chip.textContent) === null || _a === void 0 ? void 0 : _a.trim()) === selectedCategory; })) {
+            var newChip_2 = document.createElement("div");
+            newChip_2.classList.add("container__right-chip");
+            newChip_2.textContent = selectedCategory;
+            var deleteBtn = document.createElement("span");
+            deleteBtn.classList.add("container__right-deleteBtn");
+            deleteBtn.innerHTML = "<i class=\"fa-regular fa-circle-xmark\"></i>";
+            deleteBtn.addEventListener("click", function () {
+                chipContainer.removeChild(newChip_2);
+                filterCategory();
+            });
+            newChip_2.appendChild(deleteBtn);
+            chipContainer.appendChild(newChip_2);
+            filterCategory();
+        }
+    }
+});
 addBtn.addEventListener("click", function (e) {
     e.preventDefault();
-    // let emptyEl = document.querySelector(".container__emptyfield") as HTMLLIElement;
-    // if(taskTitle.value == "" || taskDueDate.value == "" || taskPriority.value == "" 
-    //     || taskDescription.value == "" || taskCategory.value == ""){
-    //         let para = document.createElement("p") as HTMLElement;
-    //         para.textContent = "Some or All fields are empty, please check before adding them.";
-    //         // para.style.display = "block";
-    //         emptyEl.appendChild(para);
-    //         // if(emptyEl){
-    //         //     return;
-    //         // }
-    //         // else{
-    //         //     emptyEl.appendChild(para);
-    //         // }
-    // }
-    // else{
-    //     createTask();
-    //     // emptyEl.style.display = "none";
-    // }
     createTask();
-    console.log(allTaskArr);
+    // console.log(allTaskArr);
 });
-// createTask();

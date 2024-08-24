@@ -1,17 +1,13 @@
 @import "functions.scss";
+@import "colors.scss";
+@import "mixins.scss";
 
 .container{
 
-    &__emptyfield{
-        // position: relative;
-        margin-top: px(10px);
-    }
-
     &__left{
-        // position: fixed;
         width: 30%;
         height: 100vh;
-        background-color: rgb(127, 177, 181);
+        background-color: $left-bgColor;
         position: relative;
 
         &-task{
@@ -20,144 +16,139 @@
             height: fit-content;
             top: 15%;
             left: 5%;
-            // background-color: green;
         }
 
         &-form{
-            display: flex;
-            flex-direction: column;
             gap: px(25px);
+            @include columnDir;
         }
 
         &-title{
-            display: flex;
-            flex-direction: column;
+            @include columnDir;
         }
 
         &-titleinput{
-            border-radius: px(3px);
-            padding: px(5px) px(10px);
-            border: none;
-            outline: none;
+            @include leftBorderandPadding;
+            @include borderOutlineNone;
         }
 
         &-input{
-            border-radius: px(3px);
-            padding: px(5px) px(10px);
-            border: none;
-            outline: none;
+            @include leftBorderandPadding;
+            @include borderOutlineNone;
         }
 
         &-description{
-            display: flex;
-            flex-direction: column;
+            @include columnDir;
         }
 
         &-textarea{
-            border-radius: px(3px);
-            padding: px(5px) px(10px);
-            border: none;
-            outline: none;
-            // resize: none;
-            // height: 100%;
+            @include leftBorderandPadding;
+            @include borderOutlineNone;
         }
 
         &-taskdetail{
-            display: flex;
-            justify-content: space-between;
             width: 100%;
+            @include justifyBetween;
         }
 
         &-duedate{
-            display: flex;
-            flex-direction: column;
             width: 48%;
+            @include columnDir;
         }
 
         &-duedateinput{
-            border-radius: px(3px);
-            padding: px(5px) px(10px);
-            border: none;
-            outline: none;
+            @include leftBorderandPadding;
+            @include borderOutlineNone;
         }
 
         &-priority{
-            display: flex;
-            flex-direction: column;
+            @include columnDir;
             width: 48%;
         }
 
         &-priorityselect{
-            border-radius: px(3px);
-            padding: px(5px) px(10px);
-            border: none;
-            outline: none;
+            @include leftBorderandPadding;
+            @include borderOutlineNone;
         }
 
         &-categories{
-            display: flex;
-            flex-direction: column;
+            @include columnDir;
         }
 
         &-categoryselect{
             border-top-right-radius: px(3px);
             border-bottom-right-radius: px(3px);
             padding: px(5px) px(10px);
-            border: none;
-            outline: none;
+            @include borderOutlineNone;
         }
 
         &-ccontainer{
-            display: flex;
-            justify-content: space-between;
             width: 100%;
+            @include justifyBetween;
         }
 
         &-categorycontainer{
             border-top-left-radius: px(3px);
             border-bottom-left-radius: px(3px);
             width: 100%;
-            background-color: #fff;
+            background-color: $whiteColor;
         }
 
         &-categoryinput{
-            display: flex;
-            justify-content: space-between;
             left: 50%;
+            @include justifyBetween;
         }
 
         &-categoryDiv{
-            display: flex;
             align-items: center;
-            justify-content: space-between;
             gap: px(5px);
-            background-color: #9BE2DB;
-            color: #1C6A62;
+            background-color: $chip-bgColor;
+            color: $chip-color;
             border-radius: px(16px);
             padding: 0 px(10px);
             margin: px(5px) px(5px);
             width: fit-content;
+            @include justifyBetween;
         }
 
         &-deleteBtn{
             background-color: transparent;
-            border: none;
-            outline: none;
             width: fit-content;
             margin: px(5px) px(5px);
-            color: #1C6A62;
+            color: $chip-color;
             cursor: pointer;
+            @include borderOutlineNone;
         }
 
         &-button{
             border-radius: px(5px);
-            border: none;
-            outline: none;
+            @include borderOutlineNone;
             padding: px(10px);
-            background-color: #000;
-            color: #fff;
+            background-color: $blackColor;
+            color: $whiteColor;
             cursor: pointer;
-            // margin-top: px(25px);
+        }
+    }
+
+    &__error{
+        margin-top: px(15px);
+
+        &-handleerror{
+            background-color: $error-color;
+            padding: px(10px) px(5px);
+            border-radius: px(3px);
+            @include justifyBetween;
+        }
+
+        &-para{
+            font-size: px(16px);
+        }
+
+        &-delete{
+            background-color: transparent;
+            cursor: pointer;
+            font-size: px(15px);
+            @include borderOutlineNone;
         }
     }
 }

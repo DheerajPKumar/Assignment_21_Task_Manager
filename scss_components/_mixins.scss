@@ -1,0 +1,49 @@
+@import "functions.scss";
+@import "colors.scss";
+
+@mixin columnDir{
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin leftBorderandPadding{
+    border-radius: px(3px);
+    padding: px(5px) px(10px);
+}
+
+@mixin borderOutlineNone{
+    border: none;
+    outline: none;
+}
+
+@mixin justifyBetween{
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin flexCenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin alignCenter{
+    display: flex;
+    align-items: center;
+}
+
+@mixin commomRightBorder{
+    border: px(1px) solid $grayColor;
+}
+
+@mixin commonRightGap{
+    gap: px(5px);
+}
+
+@mixin commonRightPadding{
+    padding: px(5px) px(10px);
+}
+
+@mixin commomRightBorderRadius{
+    border-radius: px(3px);
+}
